@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: rgb(221, 251, 85);
+      padding: 15px;
+      border-radius: 6px;
+      width: 500px;
+      height:500px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .counter {
+      font-size: 24px;
+      text-align: center;
+      margin: 20px auto;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
+      background-color: #e0f7fa;
+      color: #333;
+      font-weight: bold;
+    }
+    button {
+      padding: 8px 15px;
+      font-size: 18px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <img src="https://college4u.in/wp-content/uploads/2018/03/abes.png" alt="Logo" class="logo">
+      <div class="title">Counter App</div>
+    </div>
+    <div class="counter" id="counter">0</div>
+    <div style="text-align:center;">
+      <button onclick="increase()">+</button>
+      <button onclick="decrease()">-</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById('counter');
+
+    function increase() {
+      if (count >= 10) {
+        alert("Count cannot exceed 10");
+        return;
+      }
+      count++;
+      counter.textContent = count;
+    }
+
+    function decrease() {
+      if (count <= 0) {
+        alert("Count cannot go below 0");
+        return;
+      }
+      count--;
+      counter.textContent = count;
+    }
+  </script>
+</body>
+</html>

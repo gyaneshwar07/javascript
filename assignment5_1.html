@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background-color: #fff;
+      width: 350px;
+      height: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      position: relative;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+    }
+
+    .title-text {
+      font-size: 1.8em;
+      color: #333;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    .card-content {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .counter-display {
+      font-size: 2em;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .btn {
+      font-size: 1.5em;
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-minus {
+      background-color: #dc3545;
+    }
+
+    .btn-minus:hover {
+      background-color: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <img src="https://college4u.in/wp-content/uploads/2018/03/abes.png" alt="Logo" class="logo" />
+      <div class="title-text">Counter App</div>
+    </div>
+    <div class="card-content">
+      <div class="counter-display" id="counter">0</div>
+      <button class="btn btn-plus" onclick="increase()">+</button>
+      <button class="btn btn-minus" onclick="decrease()">-</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    const counterDisplay = document.getElementById('counter');
+
+    function increase() {
+      count++;
+      if (count > 10) {
+        alert("Count cannot exceed 10!");
+        count = 10;
+      }
+      counterDisplay.textContent = count;
+    }
+
+    function decrease() {
+      count--;
+      if (count < 0) {
+        alert("Count cannot go below 0!");
+        count = 0;
+      }
+      counterDisplay.textContent = count;
+    }
+  </script>
+</body>
+</html>

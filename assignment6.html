@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Cards</title>
+  <style>
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      width: 50%;
+    }
+    .student {
+      margin-bottom: 10px;
+      background-color: #f0f0f0;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card" id="sameDept">
+      <h2>Same Department</h2>
+    </div>
+    <div class="card" id="diffDept">
+      <h2>Different Departments</h2>
+    </div>
+  </div>
+
+  <script>
+    const jsonData = {
+      students: [
+        { name: "Amit", roll: "CS101", department: "Computer Science" },
+        { name: "Neha", roll: "CS102", department: "Computer Science" },
+        { name: "Ravi", roll: "ME201", department: "Mechanical" },
+        { name: "Priya", roll: "EE301", department: "Electrical" },
+        { name: "Anjali", roll: "CS103", department: "Computer Science" },
+        { name: "Karan", roll: "CE401", department: "Civil" }
+      ]
+    };
+
+    const sameDept = document.getElementById("sameDept");
+    const diffDept = document.getElementById("diffDept");
+
+    const s1 = jsonData.students[0];
+    const s2 = jsonData.students[1];
+    const s3 = jsonData.students[2];
+    const s4 = jsonData.students[3];
+    const s5 = jsonData.students[4];
+    const s6 = jsonData.students[5];
+
+    sameDept.innerHTML += `<div class="student">${s1.name} - ${s1.roll} (${s1.department})</div>`;
+    sameDept.innerHTML += `<div class="student">${s2.name} - ${s2.roll} (${s2.department})</div>`;
+    sameDept.innerHTML += `<div class="student">${s5.name} - ${s5.roll} (${s5.department})</div>`;
+
+    diffDept.innerHTML += `<div class="student">${s3.name} - ${s3.roll} (${s3.department})</div>`;
+    diffDept.innerHTML += `<div class="student">${s4.name} - ${s4.roll} (${s4.department})</div>`;
+    diffDept.innerHTML += `<div class="student">${s6.name} - ${s6.roll} (${s6.department})</div>`;
+  </script>
+
+</body>
+</html>
